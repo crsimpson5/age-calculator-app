@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Day.js -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/plugin/customParseFormat.min.js"
+      integrity="sha512-FM59hRKwY7JfAluyciYEi3QahhG/wPBo6Yjv6SaPsh061nFDVSukJlpN+4Ow5zgNyuDKkP3deru35PHOEncwsw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/plugin/toObject.min.js"
+      integrity="sha512-qWOc7v2jfO5Zg34fVOIfnpvDopsqDBilo8Onabl/MHIr5idHpg73tVRUGDMVOQs2dUEsmayiagk75Ihjn6yanA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      dayjs.extend(window.dayjs_plugin_customParseFormat);
+      dayjs.extend(window.dayjs_plugin_toObject);
+    </script>
+  </head>
+  <body>
+    <main class="main">
+      <h1 class="sr-only">Age Calculator</h1>
+      <form class="form" id="form" novalidate>
+        <div class="input-group">
+          <div class="input-section">
+            <label class="label" for="day-input">Day</label>
+            <input
+              class="input"
+              type="number"
+              name="day"
+              id="day-input"
+              min="1"
+              max="31"
+              placeholder="DD"
+            />
+            <p class="error-message"></p>
+          </div>
+          <div class="input-section">
+            <label class="label" for="month-input">Month</label>
+            <input
+              class="input"
+              type="number"
+              name="month"
+              id="month-input"
+              min="1"
+              max="12"
+              placeholder="MM"
+            />
+            <p class="error-message"></p>
+          </div>
+          <div class="input-section">
+            <label class="label" for="year-input">Year</label>
+            <input
+              class="input"
+              type="number"
+              name="year"
+              id="year-input"
+              min="1900"
+              max="2020"
+              placeholder="YYYY"
+            />
+            <p class="error-message"></p>
+          </div>
+        </div>
+
+        <div class="button-wrapper">
+          <hr />
+          <button class="submit-button" type="submit">
+            <img src="./assets/images/icon-arrow.svg" alt="" />
+            <span class="sr-only">submit</span>
+          </button>
+        </div>
+      </form>
+
+      <div class="output">
+        <p><span class="color-purple" id="year-output">--</span> years</p>
+        <p><span class="color-purple" id="month-output">--</span> months</p>
+        <p><span class="color-purple" id="day-output">--</span> days</p>
+      </div>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
