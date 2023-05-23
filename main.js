@@ -8,19 +8,6 @@ const dayOutput = document.getElementById("day-output");
 const monthOutput = document.getElementById("month-output");
 const yearOutput = document.getElementById("year-output");
 
-/*
-
-Validations: 
-
-- Check if day, month, year are empty
-- Check if day, month, year are valid
-
-if inputs are valid:
-- Check if date is valid
-- Check if date is in the past
-
-*/
-
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -108,8 +95,6 @@ function validateDate() {
     "0"
   )}-${day.padStart(2, "0")}`;
 
-  console.log(date);
-
   let dateIsValid = dayjs(date, "YYYY-MM-DD", true).isValid();
 
   if (!dateIsValid) {
@@ -145,7 +130,7 @@ function validateIsInt(el) {
 
 function displayError(el, message) {
   el.parentElement.classList.add("error");
-  el.nextElementSibling.textContent = message;
+  message && (el.nextElementSibling.textContent = message);
 }
 
 function removeError(el) {
