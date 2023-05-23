@@ -54,8 +54,7 @@ p {
 .main {
   width: min(52.5rem, 100% - 2rem);
   margin-inline: auto;
-  margin-block: calc(3rem + 9vw) 2rem;
-  margin-top: min(1rem + 15vmin, 10.5rem);
+  margin-top: clamp(5.5rem, 1rem + 15vmin, 10.5rem);
   margin-bottom: 2rem;
   padding: 3rem 1.5rem;
   background-color: var(--white);
@@ -89,7 +88,6 @@ p {
 }
 
 .error-message {
-  flex-basis: 2em;
   font-style: italic;
   color: var(--red);
 }
@@ -138,10 +136,17 @@ p {
 }
 
 .button-wrapper {
+  margin-block: 2rem;
   position: relative;
   display: grid;
   place-items: center;
   isolation: isolate;
+}
+
+@media only screen and (min-width: 48em) {
+  .button-wrapper {
+    margin-block: 0;
+  }
 }
 
 .button-wrapper hr {
@@ -184,18 +189,11 @@ p {
 }
 
 .output {
-  margin-top: 2rem;
   font-weight: 800;
   font-style: italic;
   font-size: var(--fs-800);
   letter-spacing: -0.0625rem;
   line-height: 1.1;
-}
-
-@media only screen and (min-width: 48em) {
-  .output {
-    margin-top: 0;
-  }
 }
 
 /* Utilities */
