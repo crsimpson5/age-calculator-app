@@ -13,14 +13,6 @@
   --fs-800: clamp(3.5rem, 1rem + 10vw, 6.5rem);
 }
 
-/* @media only screen and (min-width: 48em) {
-  :root {
-    --fs-400: 0.875rem;
-    --fs-600: 2rem;
-    --fs-800: 6.5rem;
-  }
-} */
-
 *,
 *::before,
 *::after {
@@ -185,11 +177,11 @@ p {
   height: 37.5%;
 }
 
-/* @media only screen and (min-width: 40em) {
+@media only screen and (min-width: 48em) {
   .submit-button img {
     height: 45%;
   }
-} */
+}
 
 .output {
   margin-top: 2rem;
